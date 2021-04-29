@@ -8,5 +8,6 @@ module.exports = {
         gray: {baht: '#7C899B'},
         red: {primary: '#ea3131'}
       },
+      fill:{ red: '#ea3131', blue: '#425063'},
     }
 };

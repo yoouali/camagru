@@ -38,7 +38,7 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
             stroke="currentColor"
             tabIndex={0}
             className={`w-8 mr-4 select-none cursor-pointer ${
-              toggleLiked ? 'fill-red text-red-primary' : 'text-black-light'
+              toggleLiked ? 'fill-red text-red-primary' : 'text-black-ligh'
             }`}
           >
             <path

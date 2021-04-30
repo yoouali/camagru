@@ -8,6 +8,9 @@ export default function Header () {
     const { firebase } = useContext(FirebaseContext);
     const { user } = useContext(UserContext);
 
+    const imageSrc= '/images/avatars/${user.displayName}.jpg'; 
+    const fallbackSrc = "/images/avatars/default.png";
+
 return (
         <header className="h-16 bg-blue-light border-b border-blue-primary mb-6">
             <div className="container mx-auto max-w-screen-lg h-full">
@@ -59,7 +62,8 @@ return (
                                 </button>
                                 <div className="flex items-center cursor-pointer">
                                     <Link to={`/p/${user.displayName}`}>
-                                        <img className="mr-6 border-2 border-blue-primary rounded-full h-8 w-8 min-w-fold flex" src={`/images/avatars/${user.displayName}.jpg`} alt={`${user.displayName} profile picture`}/>
+                                        {/* <img className="mr-6 border-2 border-blue-primary rounded-full h-8 w-8 min-w-fold flex" src={`/images/avatars/${user.displayName}.jpg`} onerror="this.onerror=null; this.src='/images/avatars/yoouali.jpg'" alt={`${user.displayName} profile picture`}/> */}
+                                        <img className="mr-6 border-2 border-blue-primary rounded-full h-8 w-8 min-w-fold flex" src={imageSrc} onError={(e)=>{e.target.onError = null; e.target.src = fallbackSrc}}/>
                                     </Link>
                                 </div>
                                 </>
